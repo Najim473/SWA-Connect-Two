@@ -34,7 +34,7 @@ function ACPVerForm() {
   return (
     <form action="">
       <div className={avfStyle.container}>
-        <header>All Devices</header>
+        <header>Subscribers Data</header>
         <p class="px-5 fs-3">Personal Data</p>
         <div class="row px-5">
           <div class="col-12 col-md-6 col-lg-3">
@@ -181,99 +181,15 @@ function ACPVerForm() {
           </div>
           <div class="col-12 col-md-6 col-lg-3">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Contact State</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="State" />
+              <label for="exampleFormControlInput1" class="form-label">Alternative ID</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected value="Select">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
             </div>
           </div>
         </div>
-        <div style={{ padding: '0px 50px', marginBottom: '10px' }}>
-          <label for="exampleFormControlInput1" class="form-label">Device Type</label>
-          <select class="form-select" aria-label="Default select example" >
-            <option selected>Select Device</option>
-            <option value="1">Tablet</option>
-            <option value="2">Chromebook</option>
-            <option value="3">Hootspot</option>
-            <option value="4">Other</option>
-          </select>
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">FCC Approval Status</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="FCC Approval Status" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">FCC Approval Name</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="FCC Approval Name" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">FCC Approval Date</label>
-          <input type="date" class="form-control" id="exampleFormControlInput1" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">IMEI 1</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="IMEI 1" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">IMEI 2</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="IMEI 2" />
-        </div>  <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">IMEI 3</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="IMEI 3" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Model</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Model" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Serial Number</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Serial Number" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Color</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Color" />
-        </div>
-        <div style={{ padding: '0px 50px', marginBottom: '10px' }}>
-          <label for="exampleFormControlInput1" class="form-label">Network</label>
-          <select class="form-select" aria-label="Default select example">
-            <option selected>Select Network</option>
-            <option value="1">3G</option>
-            <option value="2">4G</option>
-            <option value="3">3G/4G</option>
-          </select>
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Agent</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Agent" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Vendor</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Vendor" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Distributor</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Distributor" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label">Device Order Number</label>
-          <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Device Order Number" />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="formFileMultiple" class="form-label">Upload Pictures</label>
-          {/* <label for="img">Select image:</label> */}
-          <input class="form-control" type="file" id="img" name="img" multiple />
-        </div>
-        <div style={{ padding: '0px 50px' }} class="mb-3">
-          <label for="formFileMultiple" class="form-label">Upload Files</label>
-          <input class="form-control" type="file" id="formFileMultiple" multiple />
-        </div>
-        <div>
-        </div>
-        <div style={{ padding: '0px 50px', marginTop: '20px' }} class="form-floating">
-          <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
-          <label style={{ padding: '10px 0px 0px 60px' }} for="floatingTextarea">Notes</label>
-        </div>
-      </div>
-      <div style={{ marginTop: '30px' }} class="col-12 text-center">
-        <button class="btn btn-primary" type="submit">Submit form</button>
       </div>
     </form>
   )
