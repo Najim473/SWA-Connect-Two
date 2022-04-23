@@ -1,11 +1,11 @@
 import React, { useState, useRef } from 'react'
+import { Multiselect } from 'multiselect-react-dropdown'
 import avfStyle from './Styles/ACPVerForm.module.css'
 function ACPVerForm() {
   const [active, setActive] = useState(true);
   const selectRef = useRef('');
   // the below useRef is used for alternative id type 
   const disabledRef = useRef('');
-
   const selectChange = () => {
     const selectValue = selectRef.current.value;
     if (selectValue === 'No') {
@@ -31,6 +31,8 @@ function ACPVerForm() {
       setVisible(false)
     }
   }
+  // MULTIPLE SELECT 
+
   return (
     <form action="">
       <div className={avfStyle.container}>
@@ -134,6 +136,7 @@ function ACPVerForm() {
             </div>
           </div>
         </div>
+        <p class="px-5 fs-3">Contact Data</p>
         <div class="row px-5">
           <div class="col-12 col-md-6 col-lg-3">
             <div class="mb-3">
@@ -144,7 +147,7 @@ function ACPVerForm() {
           <div class="col-12 col-md-6 col-lg-3">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Contact Email</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" Email" />
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder=" Email" />
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-3">
@@ -164,7 +167,7 @@ function ACPVerForm() {
           <div class="col-12 col-md-6 col-lg-3">
             <div class="mb-3">
               <label for="exampleFormControlInput1" class="form-label">Contact Zip Code</label>
-              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ZIP" />
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Zip" />
             </div>
           </div>
           <div class="col-12 col-md-6 col-lg-3">
@@ -181,7 +184,7 @@ function ACPVerForm() {
           </div>
           <div class="col-12 col-md-6 col-lg-3">
             <div class="mb-3">
-              <label for="exampleFormControlInput1" class="form-label">Alternative ID</label>
+              <label for="exampleFormControlInput1" class="form-label">Tribal Lands</label>
               <select class="form-select" aria-label="Default select example">
                 <option selected value="Select">Select</option>
                 <option value="Yes">Yes</option>
@@ -190,8 +193,221 @@ function ACPVerForm() {
             </div>
           </div>
         </div>
+        <div class="row px-5">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Mailing Address</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Address" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Mailing City </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="City" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Mailing State</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" State " />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"> Mailing Zip Code </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" Zip" />
+            </div>
+          </div>
+        </div>
+        <p class="px-5 fs-3"> Benefit Qualifying Person</p>
+        <div class="row px-5">
+          <div class="col-12 col-md-12 col-lg-12">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Qualifying Through Dependent</label>
+              <select class="form-select" aria-label="Default select example">
+                <option selected value="Select">Select</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="row px-5">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">BQP First Name  </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="First Name" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">BQP Middle Name </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" Middle Name " />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">  BQP Last Name </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" Last Name" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"> BQP Suffix</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Suffix" />
+            </div>
+          </div>
+        </div>
+        <div class="row px-5">
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">Date Of Birth  </label>
+              <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="First Name" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label">BQP SSN (Last 4 Digits) </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" 4 Digits " />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"> BQP Tribal ID </label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder=" ID" />
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-3">
+            <div class="mb-3">
+              <label for="exampleFormControlInput1" class="form-label"> BQP Alternative ID</label>
+              <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ID" />
+            </div>
+          </div>
+        </div>
+        <p class="px-5 fs-3">Eligible Program</p>
+        <div class="row px-5">
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <input class="form-check-input" type="checkbox" value="E1" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E1 (Medicaid)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E2" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E2 (Supplemental Nutrition Assistance Program (SNAP)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <input class="form-check-input" type="checkbox" value="E3" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E3 (Supplemental Security)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3">
+              <input class="form-check-input" type="checkbox" value="E4" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E4 (Federal Public Housing Assistance)
+              </label>
+            </div>
+          </div>  <div class="col-12 col-md-6">
+            <div class="mb-3">
+              {/* <input class="form-check-input" type="checkbox" value="E5" id="flexCheckDefault" /> */}
+              <input class="form-check-input" type="checkbox" value="E5" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E8 (Bureau of Indian Affairs General Assistance)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E6" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E9 (Tribal Temporary Assistance for Needy Families (Tribal TANF)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E7" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E10 (Food Distribution Program on Indian Reservations (FDPIR)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E8" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E11 (Head Start )
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E9" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E13 (Eligibility Based on Income )
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E10" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E15 (Veterans Pension or Survivors Pension)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E11" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E50 (School Lunch/Breakfast Program)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E12" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E51 (Federal Pell Grant)
+              </label>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="mb-3 d-flex">
+              <input class="form-check-input" type="checkbox" value="E13" />
+              <label class="form-check-label ms-1" for="flexCheckDefault">
+                E54 (Special Supplemental Nutrition Program for Women, Infants, and Children (WIC)
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="row px-5">
+          <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label"> Signature </label>
+            <input type="file" class="form-control" id="exampleFormControlInput1" />
+          </div>
+        </div>
+        <div class="form-check ms-4 mb-3 px-5">
+          <input class="form-check-input required" type="checkbox" value="" />
+          <label class="form-check-label" for="defaultCheck1">
+            Consumer has provided their consent to share their PII for purposes of applying and/or receiving the Affordable Connectivity Program benefit.
+          </label>
+        </div>
+        <div class="col-12 text-center">
+          <button class="btn btn-primary" type="submit">Submit form</button>
+        </div>
       </div>
-    </form>
+    </form >
   )
 }
 export default ACPVerForm
