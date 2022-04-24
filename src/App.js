@@ -4,9 +4,11 @@ import SideMenu, { menuItems } from "./components/Navigation/SideMenu";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { useState } from "react";
 import ACPVerForm from "./components/ACPVerForm/ACPVerForm";
+import SimcardData from "./components/ACPVerForm/SimcardData/SimcardData";
 
-const Dashboard = () =><ACPVerForm/>;
-const Content = () => <h1>Content</h1>;
+const Dashboard = () => <ACPVerForm />;
+// const Dashboard = () => <SimcardData />;
+// const Content = () => ;
 const Courses = () => <h1>Content/Courses</h1>;
 const Videos = () => <h1>Content/Videos</h1>;
 const Design = () => <h1>Design</h1>;
@@ -36,22 +38,25 @@ function App() {
               </Route>
               {menu.subMenus && menu.subMenus.length > 0
                 ? menu.subMenus.map((subMenu, i) => (
-                    <Route key={subMenu.name} path={subMenu.to}>
-                      <h1>{subMenu.name}</h1>
-                    </Route>
-                  ))
+                  <Route key={subMenu.name} path={subMenu.to}>
+                    <h1>{subMenu.name}</h1>
+                  </Route>
+                ))
                 : null}
             </>
           ))}
 
           <Switch>
+            {/* <Route exact path={"/"}>
+              <Dashboard />
+            </Route> */}
             <Route exact path={"/"}>
               <Dashboard />
             </Route>
             {/* <Route exact path={"/content"}>
               <Content />
-            </Route>
-            <Route path={"/content/courses"}>
+            </Route> */}
+            {/*   <Route path={"/content/courses"}>
               <Courses />
             </Route>
             <Route path={"/content/videos"}>
@@ -75,7 +80,7 @@ function App() {
           </Switch>
         </div>
       </Router>
- 
+
     </div>
   );
 }
